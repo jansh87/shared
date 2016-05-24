@@ -83,21 +83,21 @@ void CorrectBf::InitBrCorr()
     //Dss MC
       //B+-                 //pdg eval, pdg fit
                             //2.27
-    tmp = CBrCorr("B2D0lnu" , 2 , 1 , 2.31 ,  2.29, 'n');  //brmc , br measured
+    tmp = CBrCorr("B2D0lnu" , 2 , 1 , 2.31 ,  2.13, 'n');  //brmc , br measured
     vBBf.push_back( tmp );
                         //5.69
-    tmp = CBrCorr("B2D*0lnu" , 2 , 3 , 5.79 , 5.60 , 'n');
+    tmp = CBrCorr("B2D*0lnu" , 2 , 3 , 5.79 , 4.93 , 'n');
     vBBf.push_back( tmp );
  
  
     //B0
  
                         //2.19
-    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.18 , 'n');
+    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.29 , 'n');
     vBBf.push_back( tmp );
  
                         //4.93
-    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 , 5.10 , 'n');
+    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 , 5.3 , 'n');
     vBBf.push_back( tmp );
  
     //B+
@@ -106,26 +106,26 @@ void CorrectBf::InitBrCorr()
 
     //Dss MC to LLSW
     //to HFAG
-    tmp = CBrCorr("B2D_10lnu" , 2 , 5 ,0.68, 0.68, 'n');//0.74 );
+    tmp = CBrCorr("B2D_10lnu" , 2 , 5 ,0.68, 0.67, 'n');//0.74 );
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B2D0*0lnu" , 2 , 7 , 0.67, 0.43, 'n');//0.26 );
+    tmp = CBrCorr("B2D0*0lnu" , 2 , 7 , 0.67, 0.30, 'n');//0.26 );
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B2D'_10lnu" , 2 , 8 , 0.3, 0.25, 'n');//0.47 );
+    tmp = CBrCorr("B2D'_10lnu" , 2 , 8 , 0.3, 0.20, 'n');//0.47 );
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B2D_2*0lnu" , 2 , 6 , 0.6, 0.36, 'n');//0.52  );
+    tmp = CBrCorr("B2D_2*0lnu" , 2 , 6 , 0.6, 0.44, 'n');//0.52  );
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B2D*pi" , 2 , 4 , 0.10 , 0.18, 'n');
+    tmp = CBrCorr("B2D*pi" , 2 , 4 , 0.10 , 0.14, 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B2Dpilnu" , 2 , 2 , 0.16 , 0.12 , 'n');
+    tmp = CBrCorr("B2Dpilnu" , 2 , 2 , 0.16 , 0.39 , 'n');
     vBBf.push_back( tmp );
-    tmp = CBrCorr("B2D2Slnu" , 2 , 9 , 0.5 , 0.5 , 'n');
+    tmp = CBrCorr("B2D2Slnu" , 2 , 9 , 0.5 , 0.2 , 'n');
     vBBf.push_back( tmp );
-    tmp = CBrCorr("B2D*2Slnu" , 2 , 10 , 0.5 , 0.5 , 'n');
+    tmp = CBrCorr("B2D*2Slnu" , 2 , 10 , 0.5 , 0.7 , 'n');
     vBBf.push_back( tmp );
      
 //alles nochmal fuer B0 -> einfacher fuer separate skalierung
@@ -133,29 +133,29 @@ void CorrectBf::InitBrCorr()
  
  
     
-    tmp = CBrCorr("B02D_10lnu" , -2 , 5 , 0.68 , 0.68, 'n');//0.74, 'n');
+    tmp = CBrCorr("B02D_10lnu" , -2 , 5 , 0.68 , 0.63, 'n');//0.74, 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B02D0*0lnu" , -2 , 7 , 0.67 , 0.43, 'n');// 0.26, 'n');
+    tmp = CBrCorr("B02D0*0lnu" , -2 , 7 , 0.67 , 0.28, 'n');// 0.26, 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B02D'_10lnu" , -2 , 8 , 0.3 ,0.25, 'n'); // 0.47 , 'n');
+    tmp = CBrCorr("B02D'_10lnu" , -2 , 8 , 0.3 ,0.18, 'n'); // 0.47 , 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B02D_2*0lnu" , -2 , 6 , 0.6 , 0.36, 'n');//0.52 , 'n');
+    tmp = CBrCorr("B02D_2*0lnu" , -2 , 6 , 0.6 , 0.40, 'n');//0.52 , 'n');
     vBBf.push_back( tmp );
  
  
      
-    tmp = CBrCorr("B02D*pi" , -2 , 4 , 0.06 , 0.18, 'n');
+    tmp = CBrCorr("B02D*pi" , -2 , 4 , 0.06 , 0.36, 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B02Dpilnu" , -2 , 2 , 0.10 , 0.12 , 'n');
+    tmp = CBrCorr("B02Dpilnu" , -2 , 2 , 0.10 , 0.13 , 'n');
     vBBf.push_back( tmp );
      
-    tmp = CBrCorr("B02D2Slnu" , -2 , 9 , 0.5 , 0.5 , 'n');
+    tmp = CBrCorr("B02D2Slnu" , -2 , 9 , 0.5 , 0.19 , 'n');
     vBBf.push_back( tmp );
-    tmp = CBrCorr("B02D*2Slnu" , -2 , 10 , 0.5 , 0.5, 'n');
+    tmp = CBrCorr("B02D*2Slnu" , -2 , 10 , 0.5 , 0.65, 'n');
     vBBf.push_back( tmp );      
      
      
@@ -661,117 +661,125 @@ void CorrectBf::InitBrCorr()
     
     //DssFix Fix isospin 
  //D**0->
- tmp = CBrCorr("D0*0->D+pi" , 	    	"10421_411_211" , 1. , 1.413 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D0pi0" , 	    	"10421_421_111" , 1. , 1.413  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D*0pipi" ,    	"10421_423_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D*+pipi0" ,   	"10421_413_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D*0pi0pi0" ,  	"10421_423_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D0pipi" ,     	"10421_421_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D+pipi0" ,    	"10421_411_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D0pi0pi0" , 	"10421_421_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D*0eta" , 	"10421_423_221" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*0->D0eta" , 		"10421_421_221" , 1. , 1.413  ); mDssFix[tmp.sDecay] = tmp;
  
- tmp = CBrCorr("D1'0->D*+pi" , 		"20423_413_211" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D*0pi0" , 	"20423_423_111" , 1. , 1.037 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D0pipi" ,     	"20423_421_211_211" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D+pipi0" ,    	"20423_411_211_111" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D0pi0pi0" , 	"20423_421_111_111" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D0eta" , 		"20423_421_221" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D+rho" , 		"20423_411_213" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'0->D0rho0" , 	"20423_421_113" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
+ double DssEta = 0.5;
+ double Dpi = 0.667;
+ double Dpi0 = 0.333;
+ double Dpipi = 0.3429;
+ double Dpipi0 = 0.6476;
+ double Dpi0pi0 = 0.0095;
  
- tmp = CBrCorr("D10->D*0pi" , 		"10423_413_211" , 1. , 1.  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D10->D*+pi0" , 		"10423_423_111" , 1. , 1. ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D10->D+pipi" ,     	"10423_421_211_211" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D10->D0pipi0" ,    	"10423_411_211_111" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D10->D+pi0pi0" , 	"10423_421_111_111" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D+pi" , 	    	"10421_411_211" , 0.4331 , Dpi ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D0pi0" , 	    	"10421_421_111" , 0.2162 , Dpi0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D*0pipi" ,    	"10421_423_211_211" , 0.0401 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D*+pipi0" ,   	"10421_413_211_111" , 0.0757 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D*0pi0pi0" ,  	"10421_423_111_111" , 0.0011 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D0pipi" ,     	"10421_421_211_211" , 0.0401 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D+pipi0" ,    	"10421_411_211_111" , 0.0757 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D0pi0pi0" , 	"10421_421_111_111" , 0.0011 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D*0eta" , 	"10421_423_221" , 0.0585 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*0->D0eta" , 		"10421_421_221" , 0.0585 , DssEta  ); mDssFix[tmp.sDecay] = tmp;
  
- tmp = CBrCorr("D20->D*0pi" , 		"425_413_211" , 1. , 1.877  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D*+pi0" , 		"425_423_111" , 1. , 1.877 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D0pi" , 		"425_411_211" , 1. , 1.564 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D+pi0" , 		"425_421_111" , 1. , 1.564 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D+pipi" ,     	"425_421_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D0pipi0" ,    	"425_411_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D+pi0pi0" , 	"425_421_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D20->D+eta" , 		"425_421_221" , 1. , 0.782  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D*+pi" , 		"20423_413_211" , 0.5003 , Dpi  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D*0pi0" , 	"20423_423_111" , 0.2498 , Dpi0 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D0pipi" ,     	"20423_421_211_211" , 0.049 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D+pipi0" ,    	"20423_411_211_111" , 0.0925 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D0pi0pi0" , 	"20423_421_111_111" , 0.0014 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D0eta" , 		"20423_421_221" , 0.0714 , DssEta  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D+rho" , 		"20423_411_213" , 0.0238 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'0->D0rho0" , 	"20423_421_113" , 0.0119 , 0  ); mDssFix[tmp.sDecay] = tmp;
  
- tmp = CBrCorr("D2S0->D+pipi" ,     	"100421_421_211_211" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D0pipi0" ,    	"100421_411_211_111" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D+pi0pi0" , 	"100421_421_111_111" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D0*0pi" , 	"100421_10411_211" , 1. , 0.923 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D0*+pi0" , 	"100421_10421_111" , 1. , 0.923  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D*+pi0" , 	"100421_423_111" , 1. , 0.923 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D*0pi" , 		"100421_413_211" , 1. , 0.923  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D20pi" , 		"100421_415_211" , 1. , 0.461 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D2+pi0" , 	"100421_425_111" , 1. , 0.461 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D10->D*pi" , 		"10423_413_211" , 0.4193 , Dpi*0.64  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D10->D*0pi0" , 		"10423_423_111" , 0.2093 , Dpi0*0.64 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D10->D0pipi" ,     	"10423_421_211_211" , 0.1273 , Dpipi*0.36  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D10->Dpipi0" ,    	"10423_411_211_111" , 0.2405 , Dpipi0*0.36  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D10->D0pi0pi0" , 	"10423_421_111_111" , 0.0035 , Dpi0pi0*0.36   ); mDssFix[tmp.sDecay] = tmp;
  
- tmp = CBrCorr("D*2S0->D0pipi" ,     	"100423_421_211_211" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D+pipi0" ,    	"100423_411_211_111" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D0pi0pi0" , 	"100423_421_111_111" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D'1+pi" , 	"100423_20413_211" , 1. , 0.947 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D'10pi0" , 	"100423_20423_111" , 1. , 0.947  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D2S0gamma" , 	"100423_100421_22" , 1. , 0.947 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D2S+pi" , 	"100423_100411_211" , 1. , 0.947 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S0->D2S0pi0" , 	"100423_100421_111" , 1. , 0.947 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D*pi" , 		"425_413_211" , 0.1167 , Dpi*0.39  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D*pi0" , 		"425_423_111" , 0.0583 , Dpi0*0.39 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D0pi" , 		"425_411_211" , 0.2335 , Dpi*0.61 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D+pi0" , 		"425_421_111" , 0.1166 , Dpi0*0.61 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D+pipi" ,     	"425_421_211_211" , 0.1086 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D0pipi0" ,    	"425_411_211_111" , 0.2051 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D+pi0pi0" , 	"425_421_111_111" , 0.003 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D20->D+eta" , 		"425_421_221" , 0.1583 , DssEta  ); mDssFix[tmp.sDecay] = tmp;
+ 
+ tmp = CBrCorr("D2S0->D+pipi" ,     	"100421_421_211_211" , 0.1143 , Dpipi*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D0pipi0" ,    	"100421_411_211_111" , 0.2159 , Dpipi0*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D+pi0pi0" , 	"100421_421_111_111" , 0.0032 , Dpi0pi0*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D0*0pi" , 	"100421_10411_211" , 0.2223 , Dpi*0.25 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D0*+pi0" , 	"100421_10421_111" , 0.111 , Dpi0*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D*+pi0" , 	"100421_423_111" , 0.1112 , Dpi0*0.25 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D*0pi" , 		"100421_413_211" ,0.0555 , Dpi*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D20pi" , 		"100421_415_211" , 0.1112 , Dpi*0.25 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D2+pi0" , 	"100421_425_111" , 0.0555 , Dpi0*0.25 ); mDssFix[tmp.sDecay] = tmp;
+ 
+ tmp = CBrCorr("D*2S0->D0pipi" ,     	"100423_421_211_211" , 0.1143 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D+pipi0" ,    	"100423_411_211_111" , 0.2159 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D0pi0pi0" , 	"100423_421_111_111" , 0.0032 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D'1+pi" , 	"100423_20413_211" , 0.2223 , 0 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D'10pi0" , 	"100423_20423_111" , 0.111 , 0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D2S0gamma" , 	"100423_100421_22" , 0.1667 , 0.5 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D2S+pi" , 	"100423_100411_211" , 0.1112 , Dpi*0.5 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S0->D2S0pi0" , 	"100423_100421_111" , 0.0555 , Dpi0*0.5	 ); mDssFix[tmp.sDecay] = tmp;
  
  //D**+ ->
- tmp = CBrCorr("D0*+->D0pi" , 	    "10411_421_211" , 1. , 2.83  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D+pi0" , 	    "10411_411_111" , 1. , 0.705  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D*+pipi" ,    "10411_413_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D*0pipi0" ,   "10411_423_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D*+pi0pi0" ,  "10411_413_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D+pipi" ,     "10411_411_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D0pipi0" ,    "10411_421_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D+pi0pi0" , 	"10411_411_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D*+eta" , 	"10411_413_221" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D0*+->D+eta" , 		"10411_411_221" , 1. , 1.413  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D0pi" , 	    "10411_421_211" , 	mDssFix["10421_411_211"].BrMC , mDssFix["110421_421_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D+pi0" , 	    "10411_411_111" , 	mDssFix["110421_421_111"].BrMC , mDssFix["10421_411_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D*+pipi" ,    "10411_413_211_211" , mDssFix["10421_423_211_211"].BrMC , mDssFix["10421_423_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D*0pipi0" ,   "10411_423_211_111" , mDssFix["10421_413_211_111"].BrMC , mDssFix["10421_413_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D*+pi0pi0" ,  "10411_413_111_111" , mDssFix["10421_423_111_111"].BrMC , mDssFix["10421_423_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D+pipi" ,     "10411_411_211_211" ,mDssFix["10421_421_211_211"].BrMC , mDssFix["10421_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D0pipi0" ,    "10411_421_211_111" ,  mDssFix["10421_411_211_111"].BrMC , mDssFix["10421_411_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D+pi0pi0" , 	"10411_411_111_111" ,  mDssFix["10421_421_111_111"].BrMC , mDssFix["10421_421_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D*+eta" , 	"10411_413_221" , 	mDssFix["10421_423_221"].BrMC , mDssFix["10421_423_221"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D0*+->D+eta" , 		"10411_411_221" , 	mDssFix["10421_421_221"].BrMC , mDssFix["10421_421_221"].Br  ); mDssFix[tmp.sDecay] = tmp;
  
- tmp = CBrCorr("D1'+->D*0pi" , 		"20413_423_211" , 1. , 2.077  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D*+pi0" , 	"20413_413_111" , 1. , 0.518 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D+pipi" ,     "20413_411_211_211" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D0pipi0" ,    "20413_421_211_111" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D+pi0pi0" , 	"20413_411_111_111" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D+eta" , 		"20413_411_221" , 1. , 1.037  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D0rho" , 		"20413_421_213" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1'+->D+rho0" , 	"20413_411_113" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- 
- 
- tmp = CBrCorr("D1+->D*0pi" , 		"10413_423_211" , 1. , 2.004  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1+->D*+pi0" , 		"10413_413_111" , 1. , 0.499 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1+->D+pipi" ,     	"10413_411_211_211" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1+->D0pipi0" ,    	"10413_421_211_111" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D1+->D+pi0pi0" , 	"10413_411_111_111" , 1. , 1.0  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D*0pi" , 		"20413_423_211" , mDssFix["20423_413_211"].BrMC , mDssFix["20423_423_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D*+pi0" , 	"20413_413_111" , mDssFix["20423_423_111"].BrMC , mDssFix["20423_413_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D+pipi" ,     "20413_411_211_211" , mDssFix["20423_421_211_211"].BrMC , mDssFix["20423_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D0pipi0" ,    "20413_421_211_111" , mDssFix["20423_411_211_111"].BrMC , mDssFix["20423_411_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D+pi0pi0" , 	"20413_411_111_111" , mDssFix["220423_421_111_111"].BrMC , mDssFix["220423_421_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D+eta" , 		"20413_411_221" , mDssFix["20423_421_221"].BrMC , mDssFix["20423_421_221"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D0rho" , 		"20413_421_213" , mDssFix["20423_411_213"].BrMC , mDssFix["20423_411_213"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1'+->D+rho0" , 	"20413_411_113" , mDssFix["20423_421_113"].BrMC , mDssFix["20423_421_113"].Br  ); mDssFix[tmp.sDecay] = tmp;
  
  
- tmp = CBrCorr("D2+->D*0pi" , 		"415_423_211" , 1. , 3.758  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D*+pi0" , 		"415_413_111" , 1. , 0.938 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D0pi" , 		"415_421_211" , 1. , 3.133 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D+pi0" , 		"415_411_111" , 1. , 0.781 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D+pipi" ,     	"415_411_211_211" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D0pipi0" ,    	"415_421_211_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D+pi0pi0" , 	"415_411_111_111" , 1. , 0  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2+->D+eta" , 		"415_411_221" , 1. , 0.782  ); mDssFix[tmp.sDecay] = tmp;
- 
- tmp = CBrCorr("D2S+->D+pipi" ,     	"100411_411_211_211" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D0pipi0" ,    	"100411_421_211_111" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D+pi0pi0" , 	"100411_411_111_111" , 1. , 1.384  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D0*0pi" , 	"100411_10421_211" , 1. , 1.848 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D0*+pi0" , 	"100411_10411_111" , 1. , 0.461  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D*+pi0" , 	"100411_413_111" , 1. , 1.849 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D*0pi" , 		"100411_423_211" , 1. , 0.461  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D20pi" , 		"100411_425_211" , 1. , 0.925 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S+->D2+pi0" , 	"100411_415_111" , 1. , 0.23 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1+->D*0pi" , 		"10413_423_211" , mDssFix["10423_413_211"].BrMC , mDssFix["10423_423_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1+->D*+pi0" , 		"10413_413_111" , mDssFix["10423_423_111"].BrMC , mDssFix["10423_413_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1+->D+pipi" ,     	"10413_411_211_211" , mDssFix["10423_421_211_211"].BrMC , mDssFix["10423_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1+->D0pipi0" ,    	"10413_421_211_111" , mDssFix["10423_411_211_111"].BrMC , mDssFix["10423_411_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D1+->D+pi0pi0" , 	"10413_411_111_111" , mDssFix["10423_421_111_111"].BrMC , mDssFix["10423_421_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
  
  
- tmp = CBrCorr("D*2S+->D+pipi" ,     	"100413_411_211_211" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D0pipi0" ,    	"100413_421_211_111" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D+pi0pi0" , 	"100413_411_111_111" , 1. , 1.105  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D'10pi" , 	"100413_20423_211" , 1. , 1.897 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D'1+pi0" , 	"100413_20413_111" , 1. , 0.473  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D2S+gamma" , 	"100413_100411_22" , 1. , 0.947 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D2S0pi" , 	"100413_100421_211" , 1. , 1.898 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D*2S+->D2S+pi0" , 	"100413_100411_111" , 1. , 0.473 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D*0pi" , 		"415_423_211" , mDssFix["425_413_211"].BrMC , mDssFix["425_423_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D*+pi0" , 		"415_413_111" , mDssFix["425_423_111"].BrMC , mDssFix["425_413_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D0pi" , 		"415_421_211" , mDssFix["425_411_211"].BrMC , mDssFix["425_421_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D+pi0" , 		"415_411_111" , mDssFix["425_421_111"].BrMC , mDssFix["425_411_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D+pipi" ,     	"415_411_211_211" , mDssFix["425_421_211_211"].BrMC , mDssFix["425_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D0pipi0" ,    	"415_421_211_111" , mDssFix["425_411_211_111"].BrMC , mDssFix["425_411_211_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D+pi0pi0" , 	"415_411_111_111" , mDssFix["425_421_111_111"].BrMC , mDssFix["425_421_111_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2+->D+eta" , 		"415_411_221" , mDssFix["425_421_221"].BrMC , mDssFix["425_421_221"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ 
+ tmp = CBrCorr("D2S+->D+pipi" ,     	"100411_411_211_211" , mDssFix["100421_421_211_211"].BrMC , mDssFix["100421_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D0pipi0" ,    	"100411_421_211_111" , mDssFix["100421_411_211_111"].BrMC , mDssFix["100421_411_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D+pi0pi0" , 	"100411_411_111_111" , mDssFix["100421_421_111_111"].BrMC , mDssFix["100421_421_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D0*0pi" , 	"100411_10421_211" , mDssFix["100421_10411_211"].BrMC , mDssFix["100421_10421_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D0*+pi0" , 	"100411_10411_111" , mDssFix["100421_10421_111"].BrMC , mDssFix["100421_10411_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D*+pi0" , 	"100411_413_111" , mDssFix["100421_423_111"].BrMC , mDssFix["100421_413_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D*0pi" , 		"100411_423_211" ,mDssFix["100421_413_211"].BrMC , mDssFix["100421_423_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D20pi" , 		"100411_425_211" , mDssFix["100421_415_211"].BrMC , mDssFix["100421_425_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S+->D2+pi0" , 	"100411_415_111" , mDssFix["100421_425_111"].BrMC , mDssFix["100421_415_211"].Br ); mDssFix[tmp.sDecay] = tmp;
+ 
+ 
+ tmp = CBrCorr("D*2S+->D+pipi" ,     	"100413_411_211_211" , mDssFix["100423_421_211_211"].BrMC , mDssFix["100423_421_211_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D0pipi0" ,    	"100413_421_211_111" , mDssFix["100423_411_211_111"].BrMC , mDssFix["100423_411_211_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D+pi0pi0" , 	"100413_411_111_111" , mDssFix["100423_421_111_111"].BrMC , mDssFix["100423_421_111_111"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D'10pi" , 	"100413_20423_211" , mDssFix["100423_20413_211"].BrMC , mDssFix["100423_20423_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D'1+pi0" , 	"100413_20413_111" , mDssFix["100423_20423_111"].BrMC , mDssFix["100423_20413_211"].Br  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D2S+gamma" , 	"100413_100411_22" , mDssFix["100423_100421_22"].BrMC , mDssFix["100423_100421_22"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D2S0pi" , 	"100413_100421_211" , mDssFix["100423_100411_211"].BrMC , mDssFix["100423_100421_111"].Br ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D*2S+->D2S+pi0" , 	"100413_100411_111" , mDssFix["100423_100421_111"].BrMC , mDssFix["100423_100411_211"].Br ); mDssFix[tmp.sDecay] = tmp;
  
  
  
