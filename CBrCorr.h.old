@@ -1,0 +1,58 @@
+
+
+class CBrCorr
+{
+    public:
+        string Name;
+        char Type; //type: e = same error for +-; n = take charge into account
+
+        int lclass;
+        int dclass;
+        string BDecay;
+        string DDecay;
+
+        float MCBr;
+        float Br;
+        float Weight;
+
+        CBrCorr(){};
+        CBrCorr(string, int, int, float, float, char type = 'n');
+        CBrCorr(string, string , string, float, float, char type = 'n');
+};
+
+
+
+CBrCorr::CBrCorr(string n, int clc, int dcl, float mc, float br, char type)
+{
+    Name.assign( n );
+    Type = type;
+
+    lclass  = clc;
+    dclass  = dcl;
+
+    BDecay.assign("0");
+    DDecay.assign("0");
+
+    MCBr    = mc;
+    Br      = br;
+
+    Weight  = Br/MCBr;
+};
+
+
+CBrCorr::CBrCorr(string n,string bd, string dd, float mc, float br, char type)
+{
+    Name.assign( n );
+    Type = type;
+
+    lclass  = 100;
+    dclass  = 100;
+
+    BDecay.assign( bd );
+    DDecay.assign( dd );
+
+    MCBr    = mc;
+    Br      = br;
+
+    Weight  = Br/MCBr;
+};

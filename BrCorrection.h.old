@@ -1,0 +1,413 @@
+#include "../shared/CBrCorr.h"
+
+#define _nDecayChars 50
+#ifndef _BrLog
+#define _BrLog 0
+#endif
+
+std::vector<CBrCorr> VBrCorr;
+
+FILE *BrCorrLog;
+
+void InitBrCorr()
+{
+    
+    CBrCorr tmp;
+
+    //B+-
+    tmp = CBrCorr("B2D0lnu" , 2 , 1 , 2.31 , 2.24 );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D*0lnu" , 2 , 3 , 5.27 , 5.68 );
+    VBrCorr.push_back( tmp );
+
+
+    //B0
+
+
+    tmp = CBrCorr("B2D-lnu" , 2 , 1 , 2.13 , 2.17 );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D*-lnu" , 2 , 3 , 5.33 , 5.02 );
+    VBrCorr.push_back( tmp );
+
+
+    //B0B+- semileptonic
+    tmp = CBrCorr("B2D_10lnu" , 2 , 5 , 0.81 , 0.74, 'e');
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D0*0lnu" , 2 , 7 , 0.91 , 0.26, 'e');
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D'_10lnu" , 2 , 8 , 0.81 , 0.47, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D_2*0lnu" , 2 , 6 , 0.39 , 0.52, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D*pi" , 2 , 4 , 0.10 , 0.14, 'e');
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2Dpilnu" , 2 , 2 , 0.16 , 0.06, 'e' );
+    VBrCorr.push_back( tmp );
+
+
+    //B0 hadronic
+
+    tmp = CBrCorr("B02D+a1-" ,  "511_20213_441" ,"0" , 0.75 , 0.6, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D+Ds-" ,  "511_441_431" ,"0" , 0.65 , 0.72, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D*+D*0K-" ,  "511_413_423_321" ,"0" , 1.18 , 1.06, 'e' );
+    VBrCorr.push_back( tmp );
+
+    //B+ hadronic
+    tmp = CBrCorr("B2D*+pipipi0" ,  "511_413_111_211_211" ,"0" , 0.2 , 1.5, 'e' );
+  //  VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2D*0rho+" ,  "511_423_213" ,"0" , 1.55 , 0.98, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("B2Ds*+D*0" ,  "511_433_423" , "0" ,1.71 , 0.76, 'e' );
+    VBrCorr.push_back( tmp );
+
+
+    //Ddecays
+
+
+    tmp = CBrCorr("D+2K0elnu" ,"0", "411_311_11_12" , 6.8 , 8.83, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+2K0munu" ,"0", "411_311_13_14" , 6.8 , 9.2, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+2K*0elnu" ,"0", "411_313_11_12" , 3.1 , 5.52, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+2K*0munu" ,"0", "411_313_13_14" , 3.1 , 5.28, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+2K0pielnu" ,"0", "411_321_211_11_12" , 1. , 0.7, 'e' ); //upper limit
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D02K+elnu" ,"0", "411_321_11_12" , 3.41 , 3.55, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D02K+munu" ,"0", "411_321_13_14" , 3.41 , 3.3, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D02K*+elnu" ,"0", "411_323_11_12" , 2.07 , 2.16, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D02K*+munu" ,"0", "411_323_13_14" , 2.07 , 1.9, 'e' );
+    VBrCorr.push_back( tmp );
+
+    //D+ hadronic
+    tmp = CBrCorr("D+rho+K0" ,"0", "411_213_311" , 6.4 , 9.6, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+K0pipi0" ,"0", "411_311_211_111" , 4.51 , 0.9, 'e' );
+    VBrCorr.push_back( tmp );
+
+    tmp = CBrCorr("D+K0pipi0" ,"0", "411_311_211_111" , 4.51 , 0.9, 'e' );
+    VBrCorr.push_back( tmp );
+
+
+
+    if(_BrLog)
+   	 BrCorrLog = fopen("BrCorr.log","w");
+
+}
+
+class CorrectBf
+{
+    public:
+
+        string Bdecay;
+        string Ddecay;
+        std:vector<string> Ddecays;
+
+
+        CorrectBf(){};
+        float weightB(string);
+        float weightD(string);
+        void splitD( void );
+}
+
+CorrectBf::weightB(sting s)
+{
+
+}
+
+CorrectBf::splitD(sting s)
+{
+    int first=0, last;
+    string stmp;
+    first = s.find_first_of('(');
+    if(first!=string::npos)
+    {
+        last = s.find_first_of(')',first);
+        if(last == string::npos){ 
+            cout<<"CorrectBf::splitD: missing closing bracket in "<<s<<endl;
+            return;
+        }
+        stmp = s.substr(0,first-1) + s.substr(last+1);
+        Ddecays.push_back(stmp);
+        stmp = s.substr(first+1,last-first);
+        splitD(stmp);
+        
+    }
+    else if (s[0] != '0')
+        Ddecays.push_back( s );
+    else return;
+}
+
+string EqualCP( string dec)
+{
+
+	if(dec[0] == '+')
+	{
+		return dec;
+	}else
+	{
+		for(unsigned i = 0; i<dec.length(); i++)
+		{
+			if(dec[i] == '+') dec[i] = '-';
+			else if(dec[i] == '-') dec[i] = '+';
+		}
+		return dec;
+			
+	}
+
+}
+
+string NoCharge(string dec)
+{
+
+	if(dec[0] == '+' || dec[0] == '-')//remove leading sign
+	{
+		for(unsigned i = 0; i<dec.length(); i++)
+		{
+			if(dec[i+1] == '+' || dec[i+1] == '-') dec[i] = '_';
+			else dec[i] = dec[i+1];
+		}
+	} else 
+	{
+		for(unsigned i = 0; i<dec.length(); i++)
+		{
+			if(dec[i] == '+' || dec[i] == '-') dec[i] = '_';
+		}
+		return dec;
+	}
+			
+	return dec;
+
+}
+string NoSubDecay(string dec)
+{
+
+	string dec_tmp;
+	int j = 0;
+	int nBrackets = 0;
+
+	for(unsigned i = 0; i<dec.length();i++)
+	{
+		if(dec[i] == '(') {nBrackets++; continue;}
+		else if(dec[i] == ')') {nBrackets--; continue;}
+
+		if(!nBrackets)
+		{
+			dec_tmp.push_back( dec[i] );
+			j++;
+		}
+	}
+	if(nBrackets != 0) 
+	{
+		//cout<<"Error: unmatching brackets! ("<<nBrackets<<")" <<"\n string: "<<dec<<endl;
+		return dec;
+	}
+	return dec_tmp;
+
+}
+
+string GetSubDecay(string dec, bool fl_return_null = true)
+{
+
+	unsigned j;
+	bool fl_match = false;
+	for( unsigned i = 0; i<dec.length(); ++i)
+	{
+		if(dec[i]== '(')
+		{//get not only the string within the brackets, but the number before, too
+			for(j = i-1; j>0;j--)
+			{
+				if(dec[j]== '_' || dec[j] == '+' || dec[j] == '-')
+				{
+					fl_match =true;
+					break;
+				}
+			}
+		}
+
+		if(fl_match) break;
+	}
+	//subdecy found?
+	if(!fl_match)
+	{
+		if(fl_return_null) return string("0");
+		else return dec;
+	}
+	string dec_tmp;
+	int nBrackets = 0;
+	for(unsigned i = 0;j<dec.length();j++,i++)
+	{
+		if(dec[j] == '(')
+			nBrackets++;
+		
+		if(dec[j] == ')')
+			nBrackets--;
+		if(nBrackets == 0)
+		{
+			if(dec[j]==')') break; 
+			dec_tmp.push_back( dec[j]);
+		}
+		else if(nBrackets == 1)
+		{
+			if(dec[j]=='(') {i--;continue;}
+			dec_tmp.push_back( dec[j]);
+		}
+		else 
+		{
+			dec_tmp.push_back( dec[j]);
+		}
+
+
+	}
+
+	if(nBrackets != 0) 
+	{
+		//cout<<"Error: unmatching brackets! ("<<nBrackets<<")" <<"\n string: "<<dec<<endl;
+		return dec;
+	}
+	return dec_tmp;
+
+
+}
+
+
+float BrCorrection(int lclass, int dclass, char* BDecay, char* DDecay)
+{
+
+    float weight = 1;
+    bool fl_match = false;
+    string BDecay_tmp;
+	int nDDecay_lvl = 0;
+	string DDecay_tmp;
+	string DDecay_tmp_nosub;
+	string DDecay_tmp1;
+	string DDecay_tmp_nosub1;
+	string DDecay_tmp2;
+	string DDecay_tmp_nosub2;
+	
+
+        BDecay_tmp.assign( NoCharge( BDecay ) );
+
+	if(DDecay[0]!='0')
+	{
+		DDecay_tmp.assign( NoCharge( DDecay ) );
+		DDecay_tmp_nosub.assign( NoSubDecay( DDecay_tmp ) );
+
+		if(DDecay_tmp_nosub[0] != '0')
+		{
+			DDecay_tmp1.assign( GetSubDecay(DDecay_tmp) );
+			DDecay_tmp_nosub1.assign( NoSubDecay( DDecay_tmp1 ) );
+			if(DDecay_tmp_nosub1[0] != '0')
+			{
+				DDecay_tmp2.assign( GetSubDecay(GetSubDecay(DDecay_tmp)) );
+				DDecay_tmp_nosub2.assign( NoSubDecay( DDecay_tmp2 ) );
+				if(DDecay_tmp_nosub2[0] != '0')
+					nDDecay_lvl = 3;
+				else nDDecay_lvl =2;
+			}
+			else nDDecay_lvl =1;
+		}
+		else nDDecay_lvl = 0;
+	}
+	else nDDecay_lvl =0;
+
+    for(std::vector<CBrCorr>::iterator it = VBrCorr.begin(); 
+            it != VBrCorr.end(); ++it )
+    {
+        if(it->Type == 'e')
+        {
+            if(it->lclass<100 && it->lclass != abs(lclass) ) continue;
+            if(it->dclass<100 && it->dclass != abs(dclass) ) continue;
+            if(it->BDecay[0] != '0' && BDecay_tmp.find( it->BDecay ) == string::npos  ) continue;
+	    if(it->DDecay[0] != '0')
+		    {
+			    if(nDDecay_lvl>0)
+			    {
+				    if(DDecay_tmp_nosub.find( it->DDecay ) != string::npos  )
+				    {
+					weight *= it->Weight;
+    					if(_BrLog)
+						fprintf(BrCorrLog, "1 %s\t%i(%i)\t%i(%i)\t%s(%s)\t%s(%s/%s)\t%f\n",
+						it->Name.c_str(), it->lclass, lclass,  it->dclass, dclass, 
+						it->BDecay.c_str(), BDecay, it->DDecay.c_str(), DDecay_tmp_nosub.c_str(),DDecay, it->Weight  );
+				    }
+
+				    if(nDDecay_lvl>1)
+				    {
+					    if(DDecay_tmp_nosub1.find( it->DDecay ) != string::npos  )
+					    {
+						weight *= it->Weight;
+    						if(_BrLog)
+							fprintf(BrCorrLog, "2 %s\t%i(%i)\t%i(%i)\t%s(%s)\t%s(%s/%s)\t%f\n",
+							it->Name.c_str(), it->lclass, lclass,  it->dclass, dclass, 
+							it->BDecay.c_str(), BDecay, it->DDecay.c_str(), DDecay_tmp_nosub1.c_str(),DDecay, it->Weight  );
+					    }
+					    if(nDDecay_lvl>2)
+					    {
+						    if(DDecay_tmp_nosub2.find( it->DDecay ) != string::npos  )
+						    {
+							weight *= it->Weight;
+    							if(_BrLog)
+								fprintf(BrCorrLog, "3 %s\t%i(%i)\t%i(%i)\t%s(%s)\t%s(%s/%s)\t%f\n",
+								it->Name.c_str(), it->lclass, lclass,  it->dclass, dclass, 
+								it->BDecay.c_str(), BDecay, it->DDecay.c_str(), DDecay_tmp_nosub2.c_str(),DDecay, it->Weight  );
+						    }
+					    }
+					    continue;
+				    }
+				    continue;
+			    }
+			    continue;
+		    }
+
+	   
+
+        }else{
+            if(it->lclass<100 && it->lclass != lclass ) continue;
+            if(it->dclass<100 && it->dclass != dclass ) continue;
+            BDecay_tmp.assign( BDecay );
+            if(it->BDecay[0] != '0' && BDecay_tmp.find( it->BDecay ) == string::npos  ) continue;
+            DDecay_tmp.assign( DDecay );
+            if(it->DDecay[0] != '0' && DDecay_tmp.find( it->DDecay ) == string::npos  ) continue;
+        }
+
+        weight *= it->Weight;
+	    if(_BrLog)
+		fprintf(BrCorrLog, "%s\t%i(%i)\t%i(%i)\t%s(%s)\t%s(%s)\t%f\n",
+			it->Name.c_str(), it->lclass, lclass,  it->dclass, dclass, 
+			it->BDecay.c_str(), BDecay, it->DDecay.c_str(), DDecay, it->Weight  );
+        break;
+
+    }
+
+
+
+    return weight;
+};
+
