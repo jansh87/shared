@@ -710,8 +710,8 @@ void CorrectBf::InitBrCorr()
  tmp = CBrCorr("D2S0->D0pi0pi0" , 	"100421_421_111_111" , 0.0032 , Dpi0pi0*0.25  ); mDssFix[tmp.sDecay] = tmp;
  tmp = CBrCorr("D2S0->D0*pi" , 		"100421_10411_211" , 0.2223 , Dpi*0.25 ); mDssFix[tmp.sDecay] = tmp;
  tmp = CBrCorr("D2S0->D0*0pi0" , 	"100421_10421_111" , 0.111 , Dpi0*0.25  ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D*0pi0" , 	"100421_423_111" , 0.1112 , Dpi0*0.25 ); mDssFix[tmp.sDecay] = tmp;
- tmp = CBrCorr("D2S0->D*+pi" , 		"100421_413_211" ,0.0555 , Dpi*0.25  ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D*0pi0" , 	"100421_423_111" , 0.0555 , Dpi0*0.25 ); mDssFix[tmp.sDecay] = tmp;
+ tmp = CBrCorr("D2S0->D*+pi" , 		"100421_413_211" , 0.1112 , Dpi*0.25  ); mDssFix[tmp.sDecay] = tmp;
  tmp = CBrCorr("D2S0->D2+pi" , 		"100421_415_211" , 0.1112 , Dpi*0.25 ); mDssFix[tmp.sDecay] = tmp;
  tmp = CBrCorr("D2S0->D20pi0" , 	"100421_425_111" , 0.0555 , Dpi0*0.25 ); mDssFix[tmp.sDecay] = tmp;
  
