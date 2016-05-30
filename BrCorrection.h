@@ -427,8 +427,8 @@ void CorrectBf::InitBrCorr()
         else if(it->first[1] == '2')
         { cBp.MCBr += it->second.MCBr; cBp.Br += it->second.Br;}  
     }
-    cB0.Br += 2*B02Xlnu + B0Xtaunu + 2*b0ulnu;  cB0.MCBr += 2*10.87 + B0Xtaunu + 2*b0ulnu;
-    cBp.Br += 2*B2Xlnu + BXtaunu+ 2*bpulnu; cBp.MCBr += 2*11.51 +  BXtaunu + 2*bpulnu;
+    cB0.Br += 2*B02Xlnu + B0Xtaunu + 2*b0ulnu;  cB0.MCBr += 2*10.45 + B0Xtaunu + 2*b0ulnu;
+    cBp.Br += 2*B2Xlnu + BXtaunu+ 2*bpulnu; cBp.MCBr += 2*11.35 +  BXtaunu + 2*bpulnu;
      
     cB0.Br = 100-cB0.Br;
     cBp.Br = 100-cBp.Br;
