@@ -93,11 +93,11 @@ void CorrectBf::InitBrCorr()
     //B0
  
                         //2.19
-    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.13 , 'n');
+    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.19 , 'n');
     vBBf.push_back( tmp );
  
                         //4.93
-    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 ,5.3 , 'n');
+    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 ,4.93 , 'n');
     vBBf.push_back( tmp );
  
     //B+
@@ -150,7 +150,7 @@ void CorrectBf::InitBrCorr()
     tmp = CBrCorr("B02D*pi" , -2 , 4 , 0.06 , 0.14, 'n');
     vBBf.push_back( tmp );
  
-    tmp = CBrCorr("B02Dpilnu" , -2 , 2 , 0.10 , 0.29 , 'n');
+    tmp = CBrCorr("B02Dpilnu" , -2 , 2 , 0.10 , 0.29, 'n');
     vBBf.push_back( tmp );
      
     tmp = CBrCorr("B02D2Slnu" , -2 , 9 , 0.5 , 0.09 , 'n');
@@ -175,11 +175,11 @@ void CorrectBf::InitBrCorr()
     //B0
  
                         //2.19
-    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.18 , 'n');
+    tmp = CBrCorr("B2D-lnu" , -2 , 1 , 2.13 , 2.19 , 'n');
     vBBf.push_back( tmp );
  
                         //4.93
-    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 , 5.10 , 'n');
+    tmp = CBrCorr("B2D*-lnu" , -2 , 3 , 5.33 , 4.93 , 'n');
     vBBf.push_back( tmp );
  
     //B+
@@ -251,7 +251,7 @@ void CorrectBf::InitBrCorr()
     float sum_all = 0;
     float sum_scaled = 0;   
     float scale2Incl; 
-    /*for(unsigned i = 0; i < vBBf.size();++i)
+    for(unsigned i = 0; i < vBBf.size();++i)
     {
         if(vBBf[i].lclass<0) continue;
         sum_all+=vBBf[i].Br;
@@ -287,7 +287,7 @@ void CorrectBf::InitBrCorr()
         if(vBBf[i].lclass > 0) continue;
         vBBf[i].Br*=scale2Incl;
     }
-     */
+     
      
      
     float BXtaunu = 2.48; //auch im fitconstraint aendern!
@@ -949,13 +949,14 @@ float CorrectBf::FixDss(char *s)
     NoCharge(stmp);
     Ddecays.clear();
     splitD(stmp);
+    
     for(std::vector<string>::iterator it = Ddecays.begin();it!= Ddecays.end(); it++){
 	    for(auto mt = mDssFix.begin(); mt != mDssFix.end(); ++mt){
-	    
+	    	
 	    	if(it->find(mt->first) == 0){
 	    		weight *= mt->second.Weight();
 	    	 	if(!(weight>=0 && weight<20))
-    				cout<<mt->first<<" "<<weight<<endl;
+    				cout<<mt->first<<" "<<weight<<" "<<mt->second.Br<<" "<<mt->second.MCBr<<" "<<mt->second.Weight()<<endl;
    
 	    		
 	    	}
